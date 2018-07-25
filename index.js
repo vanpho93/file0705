@@ -20,4 +20,4 @@ app.get('/files', (req, res) => {
     res.send({ success: true, files: fs.readdirSync('./public') });
 });
 
-app.listen(process.env.PORT || 3000, () => console.log('Server started!'));
+app.listen(process.env.PORT || 3000, () => console.log('Server started!!!'));
