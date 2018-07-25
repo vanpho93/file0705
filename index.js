@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const fs = require('fs');
+const cors = require('cors');
 const AWS = require('aws-sdk');
 
 const app = express();
@@ -23,7 +24,7 @@ const s3 = new AWS.S3({ apiVersion: '2006-03-01' });
 // });
 
 const upload = multer({ storage: multer.memoryStorage() });
-
+app.use(cors());
 app.use(express.static('./public'));
 
 app.post('/avatar', upload.single('image'), (req, res) => {
